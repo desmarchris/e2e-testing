@@ -1,0 +1,59 @@
+version: "2.0"
+
+stories:
+- story: happy path
+  steps:
+  - user: Hello. My name is [chris](name)
+  - bot: hi there!!!!
+  - user: today is a good day.
+  - bot: indeed, it is.
+
+- story: sad path 1
+  steps:
+  - user: hi
+  - bot: howdy partner
+  - user: i'm not feeling well
+  - bot: oh no!! does it help that I think you're awesome?
+  - bot: let's be friends :) 
+  - user: yeah that'd be nice.
+  - bot: super! best friends forever.
+
+- story: sad path 2
+  steps:
+  - user: hey
+  - bot: hola! my friend.
+  - user: i'm not having a good day.
+  - bot: oh no!! does it help that I think you're awesome?
+  - bot: let's be friends :) 
+  - intent: deny
+  - bot: sorry I couldn't help :(
+
+- story: capabilities
+  steps:
+  - user: what can you do?
+  - bot: i'm really just here to chat with you.
+  - user: oh ok
+  - bot: yeppers!
+
+- story: joke
+  steps:
+  - intent: joke
+  - bot: how much does a hipster weigh? an Instagram!!!!
+  - user: haha
+  - bot: very funny, I know.
+
+- story: joke 2
+  steps:
+  - intent: joke
+  - bot: how much does a hipster weigh? an Instagram!!!!
+  - user: another!
+  - bot: that's all I know, i'm not the most creative.
+  - user: you're great!
+  - bot: I am the greatest!!!
+
+- story: capture name
+  steps:
+  - user: hi.
+  - bot: what's your name?
+  - user: it's [chris](name)
+  - action: utter_name
